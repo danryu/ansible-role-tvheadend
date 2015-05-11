@@ -1,31 +1,48 @@
-Role Name
+Ansible Role: Tvheadend
 =========
 
-A brief description of the role goes here.
+Installs and configures [Tvheadend][tvheadend].
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+```shell
+# Ansible version 1.4.4+
+ansible --version
+
+# OS
+case $OSTYPE in
+  # Linux needs apt
+  "linux"*)
+      apt --version;;
+esac
+```
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yaml
+tvheadend_username: admin
+tvheadend_password: admin
+
+tvheadend_apt_key: "http://apt.tvheadend.org/repo.gpg.key"
+tvheadend_apt_repo: "deb http://apt.tvheadend.org/unstable trusty main"
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yaml
+- hosts: servers.media
+  roles:
+     - name: ensure Tvheadend
+       role: cmprescott.tvheadend
+```
 
 License
 -------
@@ -35,4 +52,7 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Based off Gregory Shulov's [htpc-ansible][htpc-ansible] playbook. Updated and maintained by Prescott Chris.
+
+[htpc-ansible]: https://github.com/GR360RY/htpc-ansible
+[tvheadend]: https://tvheadend.org/
