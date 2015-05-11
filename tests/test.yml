@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+
+  roles:
+
+    - name: ensure Tvheadend
+      role: ../..
+
+...
