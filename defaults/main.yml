@@ -1,2 +1,10 @@
 ---
 # defaults file for tvheadend
+
+tvheadend_username: admin
+tvheadend_password: admin
+
+tvheadend_apt_key: "http://apt.tvheadend.org/repo.gpg.key"
+tvheadend_apt_repo: "deb http://apt.tvheadend.org/unstable trusty main"
+
+...
