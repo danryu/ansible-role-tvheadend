@@ -1,5 +1,6 @@
 Ansible Role: Tvheadend
 =========
+[![Build Status][travis_badge]][travis_results]
 
 Installs and configures [Tvheadend][tvheadend].
 
@@ -56,3 +57,5 @@ Based off Gregory Shulov's [htpc-ansible][htpc-ansible] playbook. Updated and ma
 
 [htpc-ansible]: https://github.com/GR360RY/htpc-ansible
 [tvheadend]: https://tvheadend.org/
+[travis_badge]: https://travis-ci.org/cmprescott/ansible-role-tvheadend.svg?branch=master
+[travis_results]: https://travis-ci.org/cmprescott/ansible-role-tvheadend
