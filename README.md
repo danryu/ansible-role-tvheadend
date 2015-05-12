@@ -8,7 +8,7 @@ Requirements
 ------------
 
 ```shell
-# Ansible version 1.4.4+
+# Ansible version 1.6+
 ansible --version
 
 # OS
@@ -41,8 +41,8 @@ Example Playbook
 ```yaml
 - hosts: servers.media
   roles:
-     - name: ensure Tvheadend
-       role: cmprescott.tvheadend
+    - name: ensure Tvheadend
+      role: cmprescott.tvheadend
 ```
 
 License
