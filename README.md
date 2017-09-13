@@ -39,10 +39,10 @@ Example Playbook
 ----------------
 
 ```yaml
-- hosts: servers.media
+- hosts: localhost
   roles:
     - name: ensure Tvheadend
-      role: cmprescott.tvheadend
+      role: ansible-role-tvheadend
 ```
 
 License
