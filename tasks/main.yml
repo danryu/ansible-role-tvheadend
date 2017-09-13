@@ -1,11 +1,4 @@
 ---
-# tasks file for tvheadend
-
-
-- name: setup | all | ensure remote os supported
-  fail: "Unsupported pkg mgr. This role is depends on apt."
-  when: ansible_pkg_mgr not in ['apt']
-
 
 - include: setup-apt.yml
   sudo: Yes
@@ -17,4 +10,3 @@
   sudo: yes
   service: enabled=yes  name=tvheadend state=started
 
-...

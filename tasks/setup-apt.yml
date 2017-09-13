@@ -1,33 +1,31 @@
 ---
 # tasks file for apt setup tvheadend
-
+# install tvheadend as at https://tvheadend.org/projects/tvheadend/wiki/AptRepository
 
 - name: "setup | apt | ensure Tvheadend requirements"
   apt: name={{ item }} state=installed
   with_items:
     - debconf
     - debconf-utils
-    - linux-firmware-nonfree
-
 
 - name: "setup | apt | ensure Tvheadend repository gpg key"
-  apt_key: url={{ tvheadend_apt_key }} keyring=/etc/apt/trusted.gpg.d/tvheadend.gpg state=present
-
+#  apt_key: url={{ tvheadend_apt_key }} keyring=/etc/apt/trusted.gpg.d/tvheadend.gpg state=present
+  apt_key: >
+    keyserver="hkp://pgp.mit.edu:80"
+    id="58118E89F3A912897C070ADBF76221572C52609D"
 
 - name: "setup | apt | ensure Tvheadend repository"
   apt_repository: repo='{{ tvheadend_apt_repo }}' state=present update_cache=yes
 
-
 - name: "setup | apt | ensure Tvheadend user"
   debconf: name=tvheadend question=tvheadend/admin_username vtype=string value={{ tvheadend_username }}
-
 
 - name: "setup | apt | ensure Tvheadend password"
   debconf: name=tvheadend question=tvheadend/admin_password vtype=password value={{ tvheadend_password }}
 
-
 - name: "setup | apt | ensure Tvheadend pkg"
   apt: name=tvheadend state=installed
 
+# configure hts/channel setup
 
-...
+# 

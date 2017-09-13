@@ -5,6 +5,6 @@ tvheadend_username: admin
 tvheadend_password: admin
 
 tvheadend_apt_key: "http://apt.tvheadend.org/repo.gpg.key"
-tvheadend_apt_repo: "deb http://apt.tvheadend.org/unstable trusty main"
+tvheadend_apt_repo: "deb https://dl.bintray.com/tvheadend/deb xenial stable-4.2"
 
 ...
